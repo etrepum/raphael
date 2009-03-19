@@ -218,9 +218,9 @@ var Raphael = (function () {
         if (pathString.toString.toString() == toString.toString()) {
             return pathString;
         }
-        pathString.replace(/([achlmqstvz])[\s,]*((-?\d*\.?\d*\s*,?\s*)+)/ig, function (a, b, c) {
+        pathString.replace(/([achlmqstvz])[\s,]*(((?:(?:-?(?:0|[1-9]\d*))(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*,?\s*)+)/ig, function (a, b, c) {
             var params = [], name = b.toLowerCase();
-            c.replace(/(-?\d*\.?\d*)\s*,?\s*/ig, function (a, b) {
+            c.replace(/((?:-?(?:0|[1-9]\d*))(?:\.\d+)?(?:[eE][-+]?\d+)?)\s*,?\s*/ig, function (a, b) {
                 b && params.push(+b);
             });
             while (params.length >= paramCounts[name]) {
